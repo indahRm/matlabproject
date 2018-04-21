@@ -12,8 +12,7 @@ while line2
     choicel2=input('Enter your choice: ','s');  
     
     switch choicel2
-        case '1' %exp
-            %!! find smth to test this on
+        case '1' %exponential
             clc
             hold on;
             xlabel('X');
@@ -22,11 +21,11 @@ while line2
             plot(p,x,y);
             hold off
             
-            %mse
             fprintf('Press any key to return to the graphing menu. ');
             line2=false;
             line=false;
             pause;
+            
         case '2' %power law
             clc;
             hold on;
@@ -70,6 +69,7 @@ while line2
             line2=false;
             line=false;
             pause;
+            
         case '3' %trig
             clc;
             hold on;

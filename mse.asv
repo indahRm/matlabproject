@@ -1,4 +1,0 @@
-e = y - yfit;
-MSE = mean(e.^2);
-            
-fprintf('The MSE for the equation %is %.2f.', MSE);

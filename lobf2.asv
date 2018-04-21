@@ -16,8 +16,7 @@ while line2
             %!! find smth to test this on
             clc
             hold on;
-            xlabel('X');
-            ylabel('Y');
+            graphit;
             p=fit(x,y,'exp1');
             plot(p,x,y);
             hold off
@@ -38,7 +37,7 @@ while line2
             
             subplot(2,2,2)
             
-            if sum(x<0)>0||sum(y<0)>0 %check if there are any negative x or y values
+            if sum(x<0)>0||sum(y<0)>0
                 scatter(0,0,'x','DisplayName','Power fit not reccomended')
                 legend('show')
                 title('Log')
@@ -51,11 +50,6 @@ while line2
             else
                 loglog(x,y)
                 title(Log)
-                
-                fprintf('\n\nPress any key to return to the graphing menu. ');
-                line2=false;
-                line=false;
-                pause;
             end
             
             

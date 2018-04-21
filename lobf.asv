@@ -36,6 +36,7 @@ while line
             hold off
             
             mse
+            fprintf('The MSE is %.2f.', MSE);
             fprintf('\n\nPress any key to return to the graphing menu. ');
             line=false;
             pause;
@@ -68,19 +69,18 @@ while line
             
                     case '2'
                         
-                        if length(loaded)-1>10
+                        if length(loaded)>10
                             lim=10;
                         else
-                            lim=length(loaded)-1;
+                            lim=length(loaded);
                         end
                         fprintf('\nWhat is the maximum degree polynomial you would like to include?\n');
-                        fprintf('(Maximum degree allowed: %i) \n',lim);
-                        d=input('Enter number now: ');
+                        d=input('\n(Maximum degree allowed: %i)\n');
                         clc
                         hold on;
                         graphit;
                         
-                        for I=1:d-1
+                        for I=1:d
                             p = polyfit(x,y,I);
                             yfit=polyval(p,x);
                             plot(x,yfit);

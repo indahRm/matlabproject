@@ -67,19 +67,18 @@ while dat
                 fprintf('(Input should be in format: nameOfFile)\n');
                 pdfName=input('Enter the file name: ','s');
                 
-                if exist([pdfName '.pdf'],'file') %check to see if pdf file with that name already exists
-                    fprintf('\nFile already exists. Data will be overwritten.');
+                if exist(pdfName '.pdf','file')
+                    fprintf('\nFile already exists. Data will be overwritten.','s');
                     pdfEx=input('Proceede? (Y/N) ','s')
                     
                     switch pdfEx
+                        
                         case {'Y' 'y'}
-                            clc
                             choiced3=false;
                             fprintf('Name saved successfully. Report file will be titled %s.pdf.\n\n', pdfName);
                             fprintf('Press any key to continue. ');
                             pause;
                         case {'N' 'n'}
-                            clc
                             choiced3=false;
                             fprintf('\nOkay. Press any key to return to the data menu. ');
                             pause;
@@ -88,7 +87,6 @@ while dat
                         
                     end
                 else
-                    clc
                     choiced3=false;
                     fprintf('Name saved successfully. Report file will be titled %s.pdf.\n\n', pdfName);
                     fprintf('Press any key to continue. ');

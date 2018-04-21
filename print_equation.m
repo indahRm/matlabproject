@@ -4,7 +4,7 @@ L=length(p);
 
 for i=1:L
     if L==1
-        str=[num2str(p(i)) 'x'];
+        str=[str num2str(p(i)) 'x'];
     elseif p(i)==0
     
     elseif p(i)<0
@@ -18,9 +18,9 @@ for i=1:L
     elseif i==1
         if p(i)>0
             if i==(L-1)
-                str=[num2str(p(i)) 'x'];
+                str=[str num2str(p(i)) 'x'];
             else
-                str=[num2str(p(i)) 'x^' num2str(L-i)];
+                str=[str num2str(p(i)) 'x^' num2str(L-i)];
             end
         end
     elseif i==(L-1)

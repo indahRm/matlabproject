@@ -106,7 +106,11 @@ while line2
             p=(1./x).\y;
             yfit=p./x;
             plot(x,yfit);
+            ti=['y = ' num2str(p(1)) '/x'];
+            title(ti);
+            saveas(gcf,[pdfName '.pdf'])
             
+            fprintf('\n\nPress any key to return to the graphing menu. ');
             line2=false;
             line=false;
             pause;    

@@ -14,12 +14,19 @@ while line2
     switch choicel2
         case '1' %exponential
             clc
-            hold on;
-            xlabel('X');
-            ylabel('Y');
-            p=fit(x,y,'exp1');
-            plot(p,x,y);
-            hold off
+            if sum(y<0)>0
+                fprintf('ERROR: Exponential functions cannot pass through the origin.')
+                fprintf('\nTry a different fit.\n\n')
+                
+            else
+                hold on;
+                xlabel('X');
+                ylabel('Y');
+                p=fit(x,y,'exp1');
+                plot(p,x,y);
+                hold off
+            end
+            
             
             fprintf('Press any key to return to the graphing menu. ');
             line2=false;
@@ -70,7 +77,7 @@ while line2
             line=false;
             pause;
             
-        case '3' %trig
+        case '3' %trigonometric
             clc;
             hold on;
             graphit;
@@ -78,19 +85,28 @@ while line2
             line2=false;
             line=false;
             pause;
-        case '4' %log
+        case '4' %logorarithmic
+            %yo what the fuck
             clc;
             hold on;
             graphit;
-            fprintf('placeholder. go away.\n\n');
+            b=nlinfit(x,y);
+            p = b(1) .* exp(b(2).*x)+ b(3);
+            plot(x,p)
+            hold off
+            
+            fprintf('\n\nPress any key to return to the graphing menu. ');
             line2=false;
             line=false;
             pause;
-        case '5' %recip
+        case '5' %reciprocal (1/x)
             clc;
             hold on;
             graphit;
-            fprintf('placeholder. go away.\n\n');
+            p=(1./x).\y;
+            yfit=p./x;
+            plot(x,yfit);
+            
             line2=false;
             line=false;
             pause;    

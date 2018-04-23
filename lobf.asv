@@ -17,9 +17,8 @@ while line
             graphit;
             p = polyfit(x,y,1);
             xfit=[min(x):length(x)/500:max(x)];
-            yfit=polyval(p,xfit);
-            yp=polyval(p,x);
-            plot(xfit,yfit);
+            yfit=polyval(p,x);
+            plot(x,yfit);
             title(print_equation(p))
             hold off
             
@@ -33,10 +32,8 @@ while line
             hold on;
             graphit;
             p=x(:)\y(:);
-            xfit=[min(x):length(x)/500:max(x)];
-            yfit=xfit*p;
-            yp=polyval(p,x);
-            plot(xfit,yfit);
+            yfit=x*p;
+            plot(x,yfit);
             title(print_equation(p))
             hold off
             
@@ -63,11 +60,11 @@ while line
                         xfit=[min(x):length(x)/500:max(x)];
                         p = polyfit(x,y,d);
                         yfit=polyval(p,xfit);
-                        yp=polyval(p,x);
                         plot(xfit,yfit);
                         title(print_equation(p));
                         hold off
                         mse
+                        saving
                 
                         fprintf('\n\nPress any key to return to the graphing menu. ');
                         genp=false;
@@ -76,7 +73,7 @@ while line
             
                     case '2'
                         
-                        if length(loaded)-1 >10
+                        if length(loaded)-1>10
                             lim=10;
                         else
                             lim=length(loaded)-1;
@@ -92,19 +89,10 @@ while line
                         for I=1:d-1
                             p = polyfit(x,y,I);
                             yfit=polyval(p,xfit);
-                            yp=polyval(p,x);
-                            
-                            e = y - yp; %finding individual mse's
-                            MSE = mean(e.^2);
-                            
-                            plot(xfit,yfit,'DisplayName',['poly' num2str(I) ' MSE=' num2str(MSE)]);
-                            legend('Location','southeast');
+                            plot(xfit,yfit,'DisplayName','fuck');
                             
                         end
-                        
-                        
                         hold off
-                        saving
                         fprintf('\n\nPress any key to return to the graphing menu. ');
                         genp=false;
                         line=false;

@@ -34,15 +34,14 @@ switch choice
     case '3'
         clc
         if exist('loaded','var')
-            if exist('pdfName','var')
-                graph_options;
-                
+            if exist('loaded','var')
+            graph_options;
+            %fprintf('hooray it works!');
+            %pause;
+            
             else
-                fprintf('ERROR: File name has not been set.\n')
-                fprintf('Please provide a name for the output .pdf file.\n\n')
-                fprintf('Press any key to return to the main menu. ');
-                pause;
-            end        
+                graph_options;
+                    
         else % check to see if a file was loaded into the var 'loaded'
             fprintf('ERROR: No file detected.\n')
             fprintf('You''ll need to load a file before graphing it.\n\n')

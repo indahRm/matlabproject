@@ -6,7 +6,7 @@ while dat
     fprintf('What would you like to do, %s?\n',name);
     fprintf('1) Load a data file.\n');
     fprintf('2) Clear data from memory.\n');
-    fprintf('3) Change the report file name.\n');
+    fprintf('3) Add/change the report file name.\n');
     fprintf('4) Exit to main menu.\n');
     choiced=input('Enter your choice: ','s'); 
     

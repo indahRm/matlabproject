@@ -79,20 +79,16 @@ while line2
             
         case '3' %trigonometric
             clc;
-            choicel24=input('Is this a sine or cosine function? ','s');
-            
             hold on;
             graphit;
+            choicel24=('Is this a sine or cosine function? ','s');
+            
             xfit=[min(x):length(x)/500:max(x)];
-            switch choicel24
+            switch choice124
                 case 'sine'
-                    yfit=sin(xfit)+min(x);
-                    plot(xfit,yfit);
-                    title(['sin(x) + ' min(x)]);
+                    y=
                 case 'cos'
-                    yfit=cos(xfit)+min(x);
-                    plot(xfit,yfit);
-                    title(['cos(x) + ' min(x)]);
+                    
                 otherwise
                     fprintf('I''m sorry, but that choice is not recognized.\nPlease try again.\n\n');
             end

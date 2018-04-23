@@ -8,7 +8,7 @@ for i=1:L
     if L==1
         str=[str num2str(p(i)) 'x'];
     elseif p(i)==0
-    
+        continue;
     elseif p(i)<0
         if i==(L-1)
                 str=[str ' - ' num2str(abs(p(i))) 'x'];
@@ -29,7 +29,7 @@ for i=1:L
         str=[str ' + ' num2str(p(i)) 'x'];
     elseif i==(L)
         str=[str ' + ' num2str(p(i))];
-    else i
+    else
         str=[str ' + ' num2str(p(i)) 'x^' num2str(L-i)];
     end
 end

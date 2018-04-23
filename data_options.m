@@ -1,4 +1,5 @@
-%%loading data!!
+%%a menu for loading data and changing the pdf name
+
 dat=true;
 while dat
     clc

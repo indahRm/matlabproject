@@ -23,7 +23,8 @@ while line2
                 xlabel('X');
                 ylabel('Y');
                 p=fit(x,y,'exp1');
-                plot(p,x,y);
+                xfit=[min(x):length(x)/500:max(x)];
+                plot(p,xfit,y);
                 hold off
             end
             
@@ -108,7 +109,10 @@ while line2
             clc;
             hold on;
             graphit;
+            xfit=[min(x):length(x)/500:max(x)];
             b=nlinfit(x,y);
+            
+            if sum(x<0)>0||sum(y<0)>0
             p = b(1) .* exp(b(2).*x)+ b(3);
             plot(x,p)
             hold off

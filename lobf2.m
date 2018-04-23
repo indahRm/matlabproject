@@ -13,6 +13,8 @@ while line2
     
     switch choicel2
         case '1' %exponential
+            c='Exponential curve'
+            q=0;
             clc
             if sum(y<0)>0
                 fprintf('ERROR: Exponential functions cannot pass through the origin.')
@@ -35,6 +37,8 @@ while line2
             pause;
             
         case '2' %power law
+            c='Power Law curve'
+            q=0;
             clc;
             hold on;
             graphit;
@@ -71,16 +75,18 @@ while line2
         case '3' %trigonometric
             clc;
             choicel24=input('Is this a sine or cosine function? ','s');
-            
+            q=0;
             hold on;
             graphit;
             xfit=[min(x):length(x)/500:max(x)];
             switch choicel24
                 case 'sine'
+                    c='Sine curve'
                     yfit=sin(xfit)+min(x);
                     plot(xfit,yfit);
                     title(['sin(x) + ' min(x)]);
                 case 'cos'
+                    c='Cosine curve'
                     yfit=cos(xfit)+min(x);
                     plot(xfit,yfit);
                     title(['cos(x) + ' min(x)]);
@@ -94,8 +100,10 @@ while line2
             line2=false;
             line=false;
             pause;
-        case '4' %logorarithmic
+        case '4' %logarithmic
+            c='Logarithmic curve';
             clc;
+            q=0;
             hold on;
             graphit;
             xfit=[min(x):length(x)/500:max(x)];
@@ -117,6 +125,7 @@ while line2
             line=false;
             pause;
         case '5' %reciprocal (1/x)
+            c='Reciprocal curve';
             clc;
             hold on;
             graphit;

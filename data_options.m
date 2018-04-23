@@ -64,13 +64,13 @@ while dat
             choiced3=true;
             
             while choiced3
-                fprintf('What would you like the report PDF to be named?\n');
+                fprintf('What would you like the output files to be named?\n');
                 fprintf('(Input should be in format: nameOfFile)\n');
                 pdfName=input('Enter the file name: ','s');
                 
                 if exist([pdfName '.pdf'],'file') %check to see if pdf file with that name already exists
                     fprintf('\nFile already exists. Data will be overwritten.');
-                    pdfEx=input('Proceede? (Y/N) ','s')
+                    pdfEx=input('\nProceede? (Y/N) ','s')
                     
                     switch pdfEx
                         case {'Y' 'y'}

@@ -8,8 +8,7 @@ while rap
     fprintf('What would you like to do it, %s?\n',name);
     fprintf('1) Plot the data.\n');
     fprintf('2) Add a line of best fit.\n');
-    fprintf('3) Cry.\n');
-    fprintf('4) Exit to main menu.\n');
+    fprintf('3) Exit to main menu.\n');
     choiced=input('Enter your choice: ','s'); 
     
     x=loaded(:,1);
@@ -25,11 +24,6 @@ while rap
             clc;
             lobf
         case '3'
-            % !! figure out what to put here.
-            clc;
-            fprintf('Haha.\n\n');
-            pause;
-        case '4'
             clc;
             rap=false;
         otherwise

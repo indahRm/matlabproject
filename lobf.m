@@ -4,7 +4,7 @@ line=true;
 while line
     fprintf('What kind line would you like to fit %s with?\n', fileName);
     fprintf('1) Linear fit with non-zero y-intercept (y=mx+b).\n');
-    fprintf('2) Linear fit with zero y-intercept (y=mx+b).\n');
+    fprintf('2) Linear fit with zero y-intercept (y=mx).\n');
     fprintf('3) General polynomial of degree n.\n');
     fprintf('4) More options...\n');
     fprintf('5) Return to graphing options.\n');
@@ -12,6 +12,8 @@ while line
     
     switch choicel
         case '1' %lin fit (non-zero intercept)
+            c='Linear fit with non-zero y-intercept (y=mx+b)'
+            q=1;
             clc;
             hold on;
             graphit;
@@ -29,6 +31,8 @@ while line
             line=false;
             pause;
         case '2' %lin fit (zero intercept)
+            c='Linear fit with zero y-intercept (y=mx)';
+            q=1;
             clc;
             hold on;
             graphit;
@@ -56,9 +60,12 @@ while line
             
                 switch c
                     case '1'
+                        q=1;
                         d=input('\nWhat degree polynomial would you like to graph?\n');
                         clc
                         hold on;
+                        
+                        c=['Polynomial of degree ' num2str(d)];
                         graphit;
                         xfit=[min(x):length(x)/500:max(x)];
                         p = polyfit(x,y,d);
@@ -68,6 +75,7 @@ while line
                         title(print_equation(p));
                         hold off
                         mse
+                        saving
                 
                         fprintf('\n\nPress any key to return to the graphing menu. ');
                         genp=false;
@@ -84,6 +92,8 @@ while line
                         fprintf('\nWhat is the maximum degree polynomial you would like to include?\n');
                         fprintf('(Maximum degree allowed: %i) \n',lim);
                         d=input('Enter number now: ');
+                        
+                        c=['Polynomial of degrees 1 <= x <= ' num2str(d)]
                         clc
                         hold on;
                         graphit;

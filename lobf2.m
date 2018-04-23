@@ -1,5 +1,16 @@
 %line of best fit menu, part 2
 
+% By submitting this assignment, I agree to the following:
+%  Aggies do not lie, cheat, or steal, or tolerate those who do.
+%  I have not given or received any unauthorized aid on this assignment.
+% 
+% Name:           Indah Rahmadina
+% Section:        514
+% Team:           12
+% Assignment:     MATLAB Project
+% Date:           23/4/2018
+
+
 line2=true;
 while line2
     fprintf('1) Exponential.\n');
@@ -103,7 +114,7 @@ while line2
         case '4' %logarithmic
             c='Logarithmic curve';
             clc;
-            q=0;
+            
             hold on;
             graphit;
             xfit=[min(x):length(x)/500:max(x)];

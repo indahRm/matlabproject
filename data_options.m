@@ -1,5 +1,16 @@
 %%a menu for loading data and changing the pdf name
 
+% By submitting this assignment, I agree to the following:
+%  Aggies do not lie, cheat, or steal, or tolerate those who do.
+%  I have not given or received any unauthorized aid on this assignment.
+% 
+% Name:           Indah Rahmadina
+% Section:        514
+% Team:           12
+% Assignment:     MATLAB Project
+% Date:           23/4/2018
+
+
 dat=true;
 while dat
     clc

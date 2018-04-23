@@ -106,7 +106,7 @@ while line2
             p=(1./x).\y;
             yfit=p./x;
             plot(x,yfit);
-            ti=['y = ' num2str(p(1)) '/x'];
+            ti=['y = ' num2str(mean(p)) '/x'];
             title(ti);
             saveas(gcf,[pdfName '.pdf'])
             

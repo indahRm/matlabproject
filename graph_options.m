@@ -1,7 +1,4 @@
 %menu for graphing the data and such
-
-% !! figure out pdf
-% !! figure out how to graph all lobf2 options
 rap=true;
 while rap
     clc

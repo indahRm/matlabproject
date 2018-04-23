@@ -1,3 +1,5 @@
+%prints polynomial equations
+
 function [str] = print_equation(p)
 str=['y = '];
 L=length(p);

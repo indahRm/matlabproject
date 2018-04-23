@@ -1,3 +1,5 @@
+%finds where to start reading on .txt files
+
 line=fgetl(fid);
 
 while ischar(line)

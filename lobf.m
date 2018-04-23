@@ -16,12 +16,15 @@ while line
             hold on;
             graphit;
             p = polyfit(x,y,1);
-            yfit=polyval(p,x);
-            plot(x,yfit);
+            xfit=[min(x):length(x)/500:max(x)];
+            yfit=polyval(p,xfit);
+            yp=polyval(p,x);
+            plot(xfit,yfit);
             title(print_equation(p))
             hold off
             
             mse
+            saving
             fprintf('\n\nPress any key to return to the graphing menu. ');
             line=false;
             pause;
@@ -30,12 +33,14 @@ while line
             hold on;
             graphit;
             p=x(:)\y(:);
-            yfit=x*p;
-            plot(x,yfit);
+            xfit=[min(x):length(x)/500:max(x)];
+            yfit=xfit*p;
+            plot(xfit,yfit);
             title(print_equation(p))
             hold off
             
             mse
+            saving
             fprintf('\n\nPress any key to return to the graphing menu. ');
             line=false;
             pause;
@@ -54,10 +59,11 @@ while line
                         clc
                         hold on;
                         graphit;
+                        xfit=[min(x):length(x)/500:max(x)];
                         p = polyfit(x,y,d);
-                        yfit=polyval(p,x);
-                        plot(x,yfit);
-                        title(print_equation(p))
+                        yfit=polyval(p,xfit);
+                        plot(xfit,yfit);
+                        title(print_equation(p));
                         hold off
                         mse
                 
@@ -79,13 +85,15 @@ while line
                         clc
                         hold on;
                         graphit;
+                        xfit=[min(x):length(x)/500:max(x)];
                         
                         for I=1:d-1
                             p = polyfit(x,y,I);
-                            yfit=polyval(p,x);
-                            plot(x,yfit);
-                            mse
+                            yfit=polyval(p,xfit);
+                            plot(xfit,yfit,'DisplayName','fuck');
+                            
                         end
+                        saving
                         hold off
                         fprintf('\n\nPress any key to return to the graphing menu. ');
                         genp=false;

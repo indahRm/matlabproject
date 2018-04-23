@@ -8,6 +8,13 @@ while sav
    
    switch n
        case {'Y' 'y'}
+           saveas(gcf,[pdfName '.pdf']);
+           fileID=fopen([pdfName '_report.txt'], 'wt');
+           fprintf(fileID,'User Name: %s\n\n',name);
+           fprintf(fileID,'Date: %s\n\n', datetime());
+           fprintf(fileID,'Data file: %s\n', fileName);
+           fprintf(fileID,'Contains %i rows of data.', length(x));
+           fclose(fileID);
            clc
            fprintf('%s.pdf saved successfully. ', pdfName);
            sav=false;

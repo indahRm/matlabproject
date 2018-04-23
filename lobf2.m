@@ -58,22 +58,12 @@ while line2
                 legend('show')
                 title('Log')
                 fprintf('ERROR: Negative x or y values found. Power fit not reccommended.\n')
-                
-                fprintf('\n\nPress any key to return to the graphing menu. ');
-                line2=false;
-                line=false;
-                pause;
             else
                 loglog(x,y)
                 title(Log)
-                
-                fprintf('\n\nPress any key to return to the graphing menu. ');
-                line2=false;
-                line=false;
-                pause;
             end
-           
-           
+            saving
+            fprintf('\n\nPress any key to return to the graphing menu. ');
             line2=false;
             line=false;
             pause;
@@ -105,16 +95,21 @@ while line2
             line=false;
             pause;
         case '4' %logorarithmic
-            %yo what the fuck
             clc;
             hold on;
             graphit;
             xfit=[min(x):length(x)/500:max(x)];
-            b=nlinfit(x,y);
+            yfit=log10(xfit)+min(x);
             
             if sum(x<0)>0||sum(y<0)>0
-            p = b(1) .* exp(b(2).*x)+ b(3);
-            plot(x,p)
+                scatter(0,0,'x','DisplayName','Logarithmic fit not reccomended')
+                legend('show')
+                title('Log')
+                fprintf('ERROR: Negative x or y values found. Logarithmic fit not reccommended.\n')
+            else
+                p = b(1) .* exp(b(2).*x)+ b(3);
+                plot(x,p)
+            end
             hold off
             
             fprintf('\n\nPress any key to return to the graphing menu. ');
@@ -132,6 +127,7 @@ while line2
             title(ti);
             saveas(gcf,[pdfName '.pdf'])
             
+            fprintf(''
             fprintf('\n\nPress any key to return to the graphing menu. ');
             line2=false;
             line=false;
